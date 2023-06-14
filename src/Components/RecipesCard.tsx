@@ -8,7 +8,6 @@ const RecipeCard = ({ recipe }: Props) => {
   if (!recipe) {
     return <></>;
   }
-  console.log(recipe);
 
   const { thumb, title, description, ingredients, instructions } = recipe;
   return (
@@ -22,7 +21,7 @@ const RecipeCard = ({ recipe }: Props) => {
       <p>{description}</p>
       <ul className="Ingredient_list">
         {ingredients.map((ingredient) => (
-          <li className="Ingredient_wrapper">
+          <li key={ingredient.id} className="Ingredient_wrapper">
             <img
               width={50}
               height={50}
