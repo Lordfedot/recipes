@@ -5,26 +5,30 @@ export interface DisplayUser {
 }
 
 export interface Recipe {
-  title: string;
   area: string;
-  instructions: string;
+  category: string;
+  createdAt: string;
   description: string;
-  thumb: string;
-  preview: string;
-  time: string;
-  youtube: string;
-  tags: string[];
-  createdAt: {
-    $date: {
-      $numberLong: string;
-    };
-  };
-  updatedAt: {
-    $date: {
-      $numberLong: string;
-    };
-  };
+  favorite: boolean;
   ingredients: {
+    id: string;
     measure: string;
+    name: {
+      desc: string;
+      t: string;
+      thb: string;
+      ttl: string;
+      _id: string;
+    };
   }[];
+  instructions: string;
+  preview: string;
+  saved: boolean;
+  tags: string[];
+  thumb: string;
+  title: string;
+  time: string;
+  updatedAt: string;
+  youtube: string;
+  _id: string;
 }
