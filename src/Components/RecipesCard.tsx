@@ -9,7 +9,7 @@ const RecipeCard = ({ recipe }: Props) => {
     return <></>;
   }
 
-  const { thumb, title, description, ingredients, instructions } = recipe;
+  const { thumb, title, description, ingredients, instructions, time } = recipe;
   return (
     <li className="Card_wrapper">
       <h1>{title}</h1>
@@ -19,6 +19,7 @@ const RecipeCard = ({ recipe }: Props) => {
         <button type="button">Save</button>
       </div>
       <p>{description}</p>
+      <p>Cooking time: {time}</p>
       <ul className="Ingredient_list">
         {ingredients.map((ingredient) => (
           <li key={ingredient.id} className="Ingredient_wrapper">

@@ -1,19 +1,22 @@
-.Card_list{
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+.Card_list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.Card_wrapper{
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+.Card_wrapper {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
-.Ingredient_list{
-    display: flex;
-    flex-wrap: wrap;
+.Ingredient_list {
+  display: flex;
+  flex-wrap: wrap;
 }
-.Ingredient_wrapper{
-    display: flex;
-} 
+.Ingredient_wrapper {
+  display: flex;
+}
+.Filter_wrapper {
+  display: flex;
+}
