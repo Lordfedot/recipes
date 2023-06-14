@@ -24,6 +24,11 @@ const Layout = () => {
             <li>
               <Link to={"/register"}>Register</Link>
             </li>
+            {isAuthenticated && (
+              <li>
+                <Link to={"/myrecipes"}>My Recipes</Link>
+              </li>
+            )}
           </ul>
         </nav>
         {isAuthenticated && <button onClick={handleOnClick}>Logout</button>}

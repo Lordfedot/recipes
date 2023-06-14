@@ -1,4 +1,5 @@
 import { Recipe } from "../Helpers/Interfaces";
+import { setFavoriteRecepies, setSavedRecepies } from "../Helpers/api";
 import "./../Card.css";
 
 type Props = {
@@ -8,15 +9,32 @@ const RecipeCard = ({ recipe }: Props) => {
   if (!recipe) {
     return <></>;
   }
-
-  const { thumb, title, description, ingredients, instructions, time } = recipe;
+  const {
+    _id,
+    thumb,
+    title,
+    description,
+    ingredients,
+    instructions,
+    time,
+  } = recipe;
   return (
     <li className="Card_wrapper">
       <h1>{title}</h1>
       <div>
         <img width={150} height={150} src={thumb} alt={title} />
-        <button type="button">Add to Favorite</button>
-        <button type="button">Save</button>
+        <button
+          type="button"
+          onClick={() => setFavoriteRecepies(_id, { favorite: true })}
+        >
+          Add to Favorite
+        </button>
+        <button
+          type="button"
+          onClick={() => setSavedRecepies(_id, { saved: true })}
+        >
+          Save
+        </button>
       </div>
       <p>{description}</p>
       <p>Cooking time: {time}</p>
@@ -26,8 +44,8 @@ const RecipeCard = ({ recipe }: Props) => {
             <img
               width={50}
               height={50}
-              src={ingredient.name.thb}
-              alt={ingredient.name.ttl}
+              src={ingredient.name?.thb}
+              alt={ingredient.name?.ttl}
             />
             <p>
               {ingredient.name.ttl} {ingredient.measure}

@@ -33,11 +33,8 @@ const Filter = ({ getFilter, getTime }: Props) => {
         ))}
       </ul>
       <label>
-        Cooking time
-        <input
-          onChange={(e) => getTime(e.currentTarget.value)}
-          type="number"
-        />
+        Prepared in no longer than that time
+        <input onChange={(e) => getTime(e.currentTarget.value)} type="number" />
       </label>
     </form>
   );

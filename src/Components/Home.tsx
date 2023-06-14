@@ -13,7 +13,8 @@ const Home = () => {
   const [option, setOption] = useState("title");
   const [filter, setFilter] = useState<string | null>("");
   const [time, setTime] = useState<string | null>(null);
-
+  console.log(SearchedRecipes);
+  
   useEffect(() => {
     (async () => {
       const { response } = await getRecipes();
@@ -23,8 +24,6 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    console.log(time);
-    
     if (option === "title") {
       const filtered = recipes
         .filter((recipes) => recipes.title.includes(value))

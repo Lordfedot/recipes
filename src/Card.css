@@ -20,3 +20,9 @@
 .Filter_wrapper {
   display: flex;
 }
+.MyRecipes_Wrapper{
+  display: flex;
+}
+.MyRecipes_Coloumn{
+  width: 45%;
+}
