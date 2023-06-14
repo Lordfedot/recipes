@@ -1,9 +1,8 @@
 import axios from "axios";
-axios.defaults.baseURL = "https://pet-support-6z4x.onrender.com";
 
 export const getRecipes = async () => {
   try {
-    const response = await axios("/recipe");
+    const response = await axios("https://pet-support-6z4x.onrender.com/recipe");
     return response.data;
   } catch (error) {
     console.log(error);
@@ -11,7 +10,7 @@ export const getRecipes = async () => {
 };
 export const getFavoriteRecepies = async () => {
   try {
-    const response = await axios("recipe/favorite");
+    const response = await axios("https://pet-support-6z4x.onrender.com/recipe/favorite");
     return response.data;
   } catch (error) {
     console.log(error);
@@ -23,7 +22,7 @@ export const setFavoriteRecepies = async (
   body: { favorite: boolean }
 ) => {
   try {
-    const response = await axios.patch(`recipe/${id}/favorite`, body);
+    const response = await axios.patch(`https://pet-support-6z4x.onrender.com/recipe/${id}/favorite`, body);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -32,7 +31,7 @@ export const setFavoriteRecepies = async (
 
 export const getSavedRecepies = async () => {
   try {
-    const response = await axios("recipe/saved");
+    const response = await axios("https://pet-support-6z4x.onrender.com/recipe/saved");
     return response.data;
   } catch (error) {
     console.log(error);
@@ -44,7 +43,7 @@ export const setSavedRecepies = async (
   body: { saved: boolean }
 ) => {
   try {
-    const response = await axios.patch(`recipe/${id}/saved`, body);
+    const response = await axios.patch(`https://pet-support-6z4x.onrender.com/recipe/${id}/saved`, body);
     return response.data;
   } catch (error) {
     console.log(error);
